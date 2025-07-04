@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Haircut Appointment</title>
+</head>
+<body>
+  <h2>Book Your Haircut Appointment</h2>
+  <form id="appointmentForm">
+    <label>Name:</label><br>
+    <input type="text" id="name" required><br>
+    <label>Phone:</label><br>
+    <input type="text" id="phone" required><br><br>
+    <button type="submit">Book</button>
+  </form>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+
+      fetch("http://54.196.188.124:5000/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => {
+        alert("Error booking appointment.");
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>
