@@ -21,9 +21,6 @@ This project is a cloud-based haircut appointment app built with a 3-tier archit
 - Python, Flask, Flask-CORS
 - MySQL, HTML, CSS, JavaScript
 
-## 📷 Screenshot
-
-*(You can add a screenshot here once hosted)*
 
 ## 📡 Live URLs
 
